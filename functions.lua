@@ -76,7 +76,7 @@ function SpawnPed(Hash)
     end)
 end
 
-function SpawnVehicle(Veh, Name, Extras, x, y, z, h)
+function SpawnVehicle(Veh, Name, Extras, x, y, z, h, Badge)
     local Ped = GetPlayerPed( -1 )
 
     local WaitTime = 0
@@ -118,6 +118,32 @@ function SpawnVehicle(Veh, Name, Extras, x, y, z, h)
 	
 	for _, Extra in pairs(Extras) do
 		SetVehicleExtra(Vehicle, tonumber(Extra), 0)
+	end
+
+	-- Badge: when 'badge = true' in the config, sets the grille modkit (mod type 6)
+	-- to 'Grill 1'. Mod indexes are 0-based (-1 = stock), so 'Grill 1' is index 0.
+	-- This runs in its own thread with a short delay + retries, because mods set on
+	-- the exact frame the vehicle is created can be ignored by the game.
+	if Badge then
+		Citizen.CreateThread(function()
+			Citizen.Wait(250)
+
+			for Attempt = 1, 5 do
+				if not DoesEntityExist(Vehicle) then return end
+
+				SetVehicleModKit(Vehicle, 0)
+				local NumMods = GetNumVehicleMods(Vehicle, 6)
+
+				if NumMods > 0 then
+					SetVehicleMod(Vehicle, 6, 0, false)
+				end
+
+				local Current = GetVehicleMod(Vehicle, 6)
+
+				if NumMods == 0 or Current == 0 then return end
+				Citizen.Wait(200)
+			end
+		end)
 	end
 end
 

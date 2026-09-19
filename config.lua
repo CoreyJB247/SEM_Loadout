@@ -25,7 +25,7 @@ Config.ButtonHelp = '~INPUT_PICKUP~'
 
 --This determines what color the markers will be
 --Default = [255, 255, 255, 150]
-Config.Colour = {r = 255, g = 255, b = 255, a = 150}
+Config.Colour = {r = 0, g = 90, b = 255, a = 150}
 
 --This determines what size the markers will be
 --Default = [1.15, 0.40]
@@ -131,50 +131,89 @@ Config.GarageLocations = {
 
 --[[
     EXAMPLE: 
-	{name = 'a', spawncode = 'b', extras = {c, c}},
+	{name = 'a', spawncode = 'b', extras = {c, c}, badge = d},
     ────────────────────────────────────────────────────────────────
     'a' is the title of the of the Vehicle
 	'b' is the spawncode of the vehicle
 	'c' is any extras which you would like added by default, these are numbers
+	'd' is whether the grille modkit (badge) is set to 1 on spawn [true / false]
 ]]
 Config.GarageContents = {
 ['LSPD'] = {
-    {name = 'LSPD 2011 Ford CVPI', spawncode = 'pdcvpi', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2011 Chevy Impala', spawncode = 'pdimpala', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2013 Chevy Caprice', spawncode = 'pdcaprice', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2018 Ford Taurus', spawncode = 'pdtaurus', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2021 Ford FPIU', spawncode = 'pdexplorer', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2021 Chevy Tahoe', spawncode = 'pdtahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2023 Dodge Charger', spawncode = 'pdcharger', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2023 Chevy Silverado', spawncode = 'pdtruck', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD 2016 BMW R1200RT', spawncode = 'pdbike', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'LSPD Bicycle', spawncode = 'pdbicycle', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
+    {name = '2011 Ford CVPI', spawncode = 'ULC11CVPI', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2011 Ford CVPI Slicktop', spawncode = 'ULC11CVPISlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Dodge Charger', spawncode = 'ULC14Charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Dodge Charger Slicktop', spawncode = 'ULC14ChargSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2016 Ford FPIU', spawncode = 'ULC16FPIU', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2016 Ford FPIU Slicktop', spawncode = 'ULC16FPIUSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Chevy Tahoe', spawncode = 'ULC18Tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Chevy Tahoe Slicktop', spawncode = 'ULC18TahoeSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford Taurus', spawncode = 'ULC18Taurus', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford Taurus Slicktop', spawncode = 'ULC18TaurusSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Charger', spawncode = 'ULC20Charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Charger Slicktop', spawncode = 'ULC20ChargSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Durango', spawncode = 'ULC20DUR', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Durango Slicktop', spawncode = 'ULC20DURSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Ford FPIU', spawncode = 'ULC20FPIU', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Ford FPIU Slicktop', spawncode = 'ULC20FPIUSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2022 Chevy Tahoe', spawncode = 'ULC22Tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2022 Chevy Tahoe Slicktop', spawncode = 'ULC22TahoeSlick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
 },
-['BCSO'] = {
-    {name = 'BCSO 2014 Dodge Charger', spawncode = 'socharger', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'BCSO 2018 Ford Taurus', spawncode = 'sotaurus', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'BCSO 2018 Ford F-150', spawncode = 'sotruck', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'BCSO 2023 Ford FPIU', spawncode = 'sofpiu', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'BCSO 2021 Chevy Tahoe', spawncode = 'sotahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'BCSO 2021 Dodge Durango', spawncode = 'sodurango', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = 'BCSO 2023 Dodge Charger', spawncode = 'socharger2', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-},
+
 ['SAHP'] = {
-    {name = 'Harley Davidson Electroglide', spawncode = 'HPMOTO', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2011 Ford CVPI', spawncode = 'HPCVPI', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2023 Ford Mustang GT', spawncode = 'HPMUSTANG', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2020 Dodge Charger', spawncode = 'HPCHARGER', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2020 Dodge Charger Stealth Edition', spawncode = 'HPSTEALTH', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2022 Dodge Challenger RT', spawncode = 'HPCHALLENGER', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2023 Ford Explorer FPIU', spawncode = 'HPFPIU', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2022 Dodge Durango', spawncode = 'HPDURANGO', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2022 Dodge Durango Stealth Edition', spawncode = 'HPSTEALTH2', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2017 Chevy Tahoe', spawncode = 'HPTAHOE', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2014 Chevy Camaro', spawncode = 'HPCAMARO', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2023 Chevy Corvette', spawncode = 'HPVETTE', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2023 Chevy Tahoe', spawncode = 'HPTAHOE2', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2018 Ford F-150', spawncode = 'HPTRUCK', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-    {name = '2024 Ford Mustang', spawncode = 'HPMUSTANG2', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
+	{name = '2011 Ford CVPI', spawncode = 'defender11cvpi', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2011 Ford CVPI Slicktop', spawncode = 'defender11cvpislick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2013 Ford FPIU', spawncode = 'defender13fpiu', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2013 Ford FPIU Slicktop', spawncode = 'defender13fpiuslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Dodge Charger', spawncode = 'defender14charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Dodge Charger Slicktop', spawncode = 'defender14chargslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Chevy Tahoe', spawncode = 'defender14tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Chevy Tahoe Slicktop', spawncode = 'defender14tahoeslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2016 Ford FPIU', spawncode = 'defender16fpiu', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2016 Ford FPIU Slicktop', spawncode = 'defender16fpiuslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford F-150', spawncode = 'defender18f150', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford F-150 Slicktop', spawncode = 'defender18f150slick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford Taurus', spawncode = 'defender18fpis', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford Taurus Slicktop', spawncode = 'defender18fpisslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Chevy Tahoe', spawncode = 'defender18tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Chevy Tahoe Slicktop', spawncode = 'defender18tahoeslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Charger', spawncode = 'defender20charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Charger Slicktop', spawncode = 'defender20chargslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Durango', spawncode = 'defender20dur', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Durango Slicktop', spawncode = 'defender20durslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Ford FPIU', spawncode = 'defender20fpiu', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Ford FPIU Slicktop', spawncode = 'defender20fpiuslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2022 Chevy Tahoe', spawncode = 'defender22tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2022 Chevy Tahoe Slicktop', spawncode = 'defender22tahoeslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+},
+
+['BCSO'] = {
+	{name = '2010 Dodge Charger', spawncode = 'm10charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2010 Dodge Charger Slicktop', spawncode = 'm10chargslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2011 Ford CVPI', spawncode = 'm11cvpi', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2011 Ford CVPI Slicktop', spawncode = 'm11cvpislick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2011 Chevy Impala', spawncode = 'm11imp', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2011 Chevy Impala Slicktop', spawncode = 'm11impslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Dodge Charger', spawncode = 'm14charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Dodge Charger Slicktop', spawncode = 'm14chargslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Chevy Tahoe', spawncode = 'm14tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2014 Chevy Tahoe Slicktop', spawncode = 'm14tahoeslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2016 Ford FPIU', spawncode = 'm2016fpiu', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2016 Ford FPIU Slicktop', spawncode = 'm2016fpiuslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford F-150', spawncode = 'm2018f150', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford F-150 Slicktop', spawncode = 'm2018f150slick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford Taurus', spawncode = 'm18taurus', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Ford Taurus Slicktop', spawncode = 'm18taurusslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Chevy Tahoe', spawncode = 'm18tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2018 Chevy Tahoe Slicktop', spawncode = 'm18tahoeslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Charger', spawncode = 'm20charg', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Charger Slicktop', spawncode = 'm20chargslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Durango', spawncode = 'm20dur', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Dodge Durango Slicktop', spawncode = 'm20durslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Ford FPIU', spawncode = 'm20fpiu', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2020 Ford FPIU Slicktop', spawncode = 'm20fpiuslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2022 Chevy Tahoe', spawncode = 'm2022tahoe', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = '2022 Chevy Tahoe Slicktop', spawncode = 'm2022tahoeslick', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
 },
 
 }
@@ -182,7 +221,7 @@ Config.GarageContents = {
 
 
 --This determines if the vehicle deleters locations are displayed
-Config.DisplayVehicleDeleters = true
+Config.DisplayVehicleDeleters = false
 
 --This determines who has access to the LEO Deleter Menu
 --!!! NOTE: If LEO Peds is selected, peds in the 'Config.LockerContents' will have access to the LEO Menu !!!
@@ -296,21 +335,22 @@ Config.FireGarageLocations = {
 
 --[[
     EXAMPLE: 
-	{name = 'a', spawncode = 'b', extras = {c, c}},
+	{name = 'a', spawncode = 'b', extras = {c, c}, badge = d},
     ────────────────────────────────────────────────────────────────
     'a' is the title of the of the Vehicle
 	'b' is the spawncode of the vehicle
 	'c' is any extras which you would like added by default, these are numbers
+	'd' is whether the grille modkit (badge) is set to 1 on spawn [true / false]
 ]]
 Config.FireGarageContents = {
-	{name = 'Engine', spawncode = 'firetruk', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
-	{name = 'Ambulance', spawncode = 'ambulance', extras = {1,2,3,4,5,6,7,8,9,10,11,12}},
+	{name = 'Engine', spawncode = 'firetruk', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = 'Ambulance', spawncode = 'ambulance', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
 }
 
 
 
 --This determines if the vehicle deleters locations are displayed
-Config.DisplayFireVehicleDeleters = true
+Config.DisplayFireVehicleDeleters = false
 
 --This determines who has access to the Fire Deleter Menu
 --!!! NOTE: If Fire Peds is selected, peds in the 'Config.LoadoutContents' will have access to the Fire Menu !!!
