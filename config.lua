@@ -67,6 +67,9 @@ Config.ArmouryAccess = 0
 --You can use the '/coords' command to get the coordinates
 Config.ArmouryLocations = {
 	vec3(467.08, -1011.12, 29.12), -- MRPD
+	vec3(371.64, -1612.48, 29.28), -- DAVIS PD
+	vec3(-3166.96, 1117.48, 21.08), -- CHUMASH PD
+	vec3(-439.88, 5991.4, 31.72), -- PALETO PD
 }
 
 --[[
@@ -89,10 +92,21 @@ Config.ArmouryContents = {
 		{weapon = 'weapon_combatpistol', components = {'component_at_pi_flsh'}},
 		{weapon = 'weapon_stungun', components = {''}},
 		{weapon = 'WEAPON_GLOCK20', components = {'COMPONENT_GLOCK20_FLSH_01', 'COMPONENT_GLOCK20_CLIP_02'}},
-		{weapon = 'weapon_carbinerifle', components = {'component_at_ar_flsh', 'component_at_scope_medium', 'component_at_ar_afgrip'}},
+		{weapon = 'WEAPON_CARBINERIFLE_MK2', components = {'COMPONENT_AT_AR_FLSH', 'COMPONENT_AT_SIGHTS', 'COMPONENT_AT_AR_AFGRIP_02'}},
 		{weapon = 'WEAPON_FM1_BENELLIM4', components = {'COMPONENT_FM1_BENELLIM4_FLSH_01'}},
 		{weapon = 'weapon_fireextinguisher', components = {''}},
 		{weapon = 'weapon_flare', components = {''}},
+	},
+	['SWAT'] = {
+		{weapon = 'weapon_flashlight', components = {''}},
+		{weapon = 'WEAPON_COLBATON', components = {''}},
+		{weapon = 'weapon_combatpistol', components = {'component_at_pi_flsh'}},
+		{weapon = 'weapon_stungun', components = {''}},
+		{weapon = 'WEAPON_GLOCK20', components = {'COMPONENT_GLOCK20_FLSH_01', 'COMPONENT_GLOCK20_CLIP_02'}},
+		{weapon = 'WEAPON_CARBINERIFLE_MK2', components = {'COMPONENT_AT_AR_FLSH', 'COMPONENT_AT_SIGHTS', 'COMPONENT_AT_AR_AFGRIP_02'}},
+		{weapon = 'WEAPON_FM1_BENELLIM4', components = {'COMPONENT_FM1_BENELLIM4_FLSH_01'}},
+		{weapon = 'weapon_flare', components = {''}},
+		{weapon = 'weapon_sniperrifle', components = {'COMPONENT_AT_SCOPE_MAX'}},
 	},
 
 }
@@ -127,6 +141,15 @@ Config.GarageAccess = 0
 Config.GarageLocations = {
 	{Marker = vec3(468.0, -975.24, 23.12), Spawn = {x = 470.4, y = -975.28, z = 22.92, h = 89.24}}, -- MRPD 02
 	{Marker = vec3(468.04, -978.4, 23.12), Spawn = {x = 470.68, y = -978.32, z = 22.92, h = 88.12}}, -- MRPD 03
+
+	{Marker = vec3(372.68, -1620.44, 29.28), Spawn = {x = 370.52, y = -1622.48, z = 29.24, h = 318.16}}, -- DAVIS PD 01
+	{Marker = vec3(374.92, -1622.36, 29.28), Spawn = {x = 373.12, y = -1624.48, z = 29.24, h = 321.6}}, -- DAVIS PD 02
+
+	{Marker = vec3(-3147.76, 1169.44, 21.04), Spawn = {x = -3150.44, y = 1170.64, z = 21.0, h = 245.08}}, -- CHUMASH PD 01
+	{Marker = vec3(-3149.36, 1166.32, 21.04), Spawn = {x = -3151.6, y = 1167.36, z = 21.0, h = 244.68}}, -- CHUMASH PD 02
+
+	{Marker = vec3(-480.6, 6022.6, 31.36), Spawn = {x = -483.16, y = 6025.44, z = 31.2, h = 224.2}}, -- PALETO PD 01
+	{Marker = vec3(-477.48, 6025.68, 31.36), Spawn = {x = -479.72, y = 6028.44, z = 31.2, h = 223.48}}, -- PALETO PD 02
 }
 
 --[[
@@ -273,7 +296,7 @@ Config.LoadoutAccess = 0
 --This determines where the fire loadout markers are located
 --You can use the '/coords' command to get the coordinates
 Config.LoadoutLocations = {
-	{x = 1691.97, y = 3586.19, z = 35.62}, --Sandy Shores
+	vec3(198.52, -1646.76, 29.8), -- DAVIS FD
 }
 
 --[[
@@ -294,25 +317,10 @@ Config.LoadoutLocations = {
 	Weapon Name   https://forum.fivem.net/t/list-of-weapon-spawn-names-after-hours/90750
 ]]
 Config.LoadoutContents = {
-	['Fire'] = {
-		{uniform = 's_m_y_fireman_01'},
-
-		{weapon = 'weapon_knife'},
+	['SAFR'] = {
 		{weapon = 'weapon_flashlight'},
 		{weapon = 'weapon_fireextinguisher'},
 		{weapon = 'weapon_flare'},
-		{weapon = 'weapon_stungun'},
-		{weapon = 'weapon_hatchet'},
-	},
-
-	['EMS'] = {
-		{uniform = 's_m_m_paramedic_01'},
-
-		{weapon = 'weapon_knife'},
-		{weapon = 'weapon_flashlight'},
-		{weapon = 'weapon_fireextinguisher'},
-		{weapon = 'weapon_flare'},
-		{weapon = 'weapon_stungun'},
 		{weapon = 'weapon_hatchet'},
 	},
 }
@@ -330,7 +338,7 @@ Config.FireGarageAccess = 0
 --This determines where the garage markers are located
 --You can use the '/coords' command to get the coordinates
 Config.FireGarageLocations = {
-	{Marker = {x = 1692.23, y = 3610.67, z = 35.32}, Spawn = {x = 1692.68, y = 3605.19, z = 35.47, h = 210.14}} --Sandy Shores
+	{Marker = vec3(209.04, -1637.16, 29.72), Spawn = {x = 212.92, y = -1636.44, z = 29.6, h = 317.28}} -- DAVIS FD
 }
 
 --[[
@@ -343,8 +351,8 @@ Config.FireGarageLocations = {
 	'd' is whether the grille modkit (badge) is set to 1 on spawn [true / false]
 ]]
 Config.FireGarageContents = {
-	{name = 'Engine', spawncode = 'firetruk', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
-	{name = 'Ambulance', spawncode = 'ambulance', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = 'Pierce Engine', spawncode = 'tcfiretruck', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
+	{name = 'Chevy Silverado Ambulance', spawncode = 'cambo', extras = {1,2,3,4,5,6,7,8,9,10,11,12}, badge = true},
 }
 
 
